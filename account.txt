@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+//creating class account
+class account
+{
+  private :
+  int deposit_money, withdraw_money,intrest,total_money,time;
+  float rate;
+  public:
+  //declring function to get input
+  void getdata();
+  //declaring function to disply 
+  void display();
+};
+//defining getdata function
+void account ::getdata()
+{
+    cout<<"Enter totall money"<<endl;
+    cin>>total_money;
+    cout<<"Enter money you want to deposit"<<endl;
+    cin>>deposit_money;
+    cout<<"Enter money you want to witdraw"<<endl;
+    cin>>withdraw_money;
+    cout<<"enter time for which money is deposit"<<endl;
+    cin>>time;
+    cout<<"Enter rate for which money is deposit"<<endl;
+    cin>>rate;
+    cout<<endl;
+    
+    
+}
+//defining function disply
+void account ::display()
+{
+    int remaining_money=total_money+deposit_money-withdraw_money;
+    float intrest=(deposit_money*time*rate)/100.0;
+    cout<<"remaining_money is "<<remaining_money<<endl;
+    cout<<"interset is "<<intrest<<endl;
+    if(remaining_money>5000)
+    cout<<"You have sufficient money"<<endl;
+    else
+    cout<<"you have insufficient ballance kindly sdeposit money to make your balance sufficient"<<endl;
+    
+}
+int main()
+{
+    //creating object of class type 
+    account acc_holder1,acc_holder2,acc_holder3;
+    acc_holder1.getdata();
+    acc_holder1.display();
+    cout<<endl;
+    acc_holder2.getdata();
+    acc_holder2.display();
+    cout<<endl;
+    acc_holder3.getdata();
+    acc_holder3.display();
+}
